@@ -13,7 +13,7 @@ Obj.prototype.doSomething = function (arg1_) {
 
     if (!arg1)
         return callback(new Error('first arg missing or not a number'));
-    // TODO: nextTick的用法， process的内置函数
+    // TODO: nextTick的用法， process的内置函数 https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/
     process.nextTick(function () {
         // Note: 如何实现异步回调
         // block on CPU
