@@ -23,7 +23,7 @@ const startTime = Date.now();
 setTimeout(() => {
     const endTime = Date.now()
     console.log(`timers: ${endTime - startTime}`)
-}, 6)
+}, 60)
 
 // poll阶段(等待新的事件出现)
 const readFileStart =  Date.now();

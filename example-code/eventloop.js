@@ -8,7 +8,7 @@ setTimeout(() => {
     console.log('timers', Date.now() - lastTime + 'ms');
 }, 0);
 
-// process.nextTick
+// TODO: 微任务 vs 宏任务process.nextTick
 process.nextTick(() => {
     // 进入event loop
     // timers阶段之前执行
@@ -31,7 +31,7 @@ function wait (mstime) {
 function asyncOperation (callback) {
     // console.log(__filename);
     fs.readFile(__filename, callback);
-    console.log(__filename);
+    // console.log(__filename);
 }
 /**
  * timers 21ms
