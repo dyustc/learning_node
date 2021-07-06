@@ -10,25 +10,28 @@ async.waterfall([
     function readData(callback) {
         fs.readFile('../data/data1.txt', 'utf8', function (err, data) {
             callback(err, data);
-            console.log('first callback');
-            console.log(counter);
+            // console.log('first callback');
+            // console.log(counter);
             console.log('1' + data)
         });
     },
 
     function modify(text, callback) {
-        var adjData = text.replace(/somecompany\.com/g, 'burningbird.net');
-        callback(null, adjData);
-        console.log('second callback');
-        console.log(counter);
-        console.log('2' + adjData);
+        // var adjData = text.replace(/somecompany\.com/g, 'burningbird.net');
+        // var adjData = 'e';
+        callback(null, text);
+        // callback(null, adjData);
+        // console.log('second callback');
+        // console.log(counter);
+        console.log('2' + text);
     },
 
     function modify_(text, callback) {
+        // TODO: 不明白这个为什么第一个被叫
         text = text + ' jane';
         callback(null, text);
-        console.log('third callback');
-        console.log(counter);
+        // console.log('third callback');
+        // console.log(counter);
         console.log('3' + text);
     },
 
@@ -36,8 +39,8 @@ async.waterfall([
         text = text + ' daiyi';
         fs.writeFile('../data/data4.txt', text, function (err) {
             callback(err, text + 'h');
-            console.log('fourth callback');
-            console.log(counter);
+            // console.log('fourth callback');
+            // console.log(counter);
             console.log('4' + text);
         });
     },
@@ -45,8 +48,8 @@ async.waterfall([
     function modify__(text, callback) {
         text = text + ' jack';
         callback(null, text);
-        console.log('fifth callback');
-        console.log(counter);
+        // console.log('fifth callback');
+        // console.log(counter);
         console.log('5' + text);
     }
 ], function (err, result) {

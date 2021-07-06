@@ -11,18 +11,24 @@ async.waterfall([
     function readDir(callback) {
         fs.readdir(_dir, function (err, files) {
             console.log(files);
-            // TODO: bugfix, multiple callback
             callback(err, files);
         });
     },
 
     function loopFiles(files, callback) {
-        files.forEach(function (name) {
-            console.log(name);
-            callback(null, name);
-        });
+        // files.forEach(function (name) {
+        //     console.log(name);
+        //     callback(null, name);
+        // });
+        // for (var i = 0; i < files.length; ++i) {
+        //     callback(null, files[i]);
+        // }
+        callback(null, files[0]);
+        // TODO: multiple callback bug
+        // callback(null, files[1]);
+        callback(null, files[2]);
     },
-/*
+
     function getStat(name, callback) {
         fs.stat(_dir + name, function(err, stats) {
             callback(err, name, stats);
@@ -54,7 +60,6 @@ async.waterfall([
         })
     }
 
- */
 ], function callback(err, result) {
     if (err) {
         console.error(err);

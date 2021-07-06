@@ -2,6 +2,6 @@
 learning node example code from epubit, for personal use only
 
 - learning node chapters
-- async
+- eventloop and async vs non-block
 - leetcode javascript
 - ccxt js examples
