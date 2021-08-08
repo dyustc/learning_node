@@ -25,7 +25,7 @@ fs.readFile("./data/data1.txt", "utf-8", function(err,content1){
 
 console.log('主线程')
 
-
+// TODO: 进程， 线程， 协程， 协程在一个线程执行
 try {
     console.log(content3)
 } catch(e) {
